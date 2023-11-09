@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div class="predict">
+    <h1>Predict</h1>
+
+    <div class="form-container">
+        <form
+            action="{{ url_for('predict') }}"
+            method="POST"
+            enctype="multipart/form-data"
+        ></form>
+        <input type="file" name="image" accept=".jpg, .jpeg, .png" , required />
+        <button type="submit">Submit</button>
+    </div>
+
+    <div class="result">
+        <p>{{ img_title }}</p>
+        <img src="{{ img_url }}" alt="" />
+    </div>
+</div>
+
+{% endblock %}
